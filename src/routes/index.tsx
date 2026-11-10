@@ -14,10 +14,17 @@ import { Footer } from "@/components/site/Footer";
 const TITLE = "Suli Home | Interior Design & Creation in Sulaymaniyah";
 const DESC = "Custom kitchens, TV walls, display cabinets, kids' rooms and full interior fit-outs, designed and built in Sulaymaniyah. Every space has a story. We design yours.";
 
+// Change SITE_URL if the site moves to a custom domain (share previews need absolute URLs).
+const SITE_URL = "https://suli-home.pages.dev";
+const OG_IMAGE = `${SITE_URL}/og.jpg`;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   name: "Suli Home",
+  url: SITE_URL,
+  image: OG_IMAGE,
+  logo: `${SITE_URL}/photos/logo.webp`,
   description: DESC,
   telephone: "+964 770 645 5520",
   address: { "@type": "PostalAddress", streetAddress: "GFM6+38F, Qirga – Ibrahim Ahmed", addressLocality: "Sulaymaniyah", addressRegion: "Sulaymaniyah Governorate", addressCountry: "IQ" },
@@ -36,7 +43,13 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Corner kitchen with fluted doors and warm LED light by Suli Home" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
