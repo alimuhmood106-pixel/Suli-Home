@@ -33,7 +33,7 @@ export function About() {
           </div>
           <motion.div style={{ y }} className="absolute -bottom-10 start-0 w-[44%] md:-bottom-16">
             <div className="arch-sm aspect-[3/4] border-[6px] border-cream">
-              <ClipImage src={images.diningArch} alt="Arched doorway to a dining room" w={828} h={1023} className="h-full w-full" imgClassName="h-full w-full object-cover object-[70%_50%]" />
+              <ClipImage src={images.entryway} alt="Fluted entryway cabinet under a round backlit mirror" w={1200} h={1500} className="h-full w-full" imgClassName="h-full w-full object-cover object-[45%_40%]" />
             </div>
           </motion.div>
         </div>

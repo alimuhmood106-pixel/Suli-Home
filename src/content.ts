@@ -1,13 +1,3 @@
-import kitchenSkylight from "@/assets/photos/kitchen-skylight.webp.asset.json";
-import displayCabinet from "@/assets/photos/display-cabinet.webp.asset.json";
-import kitchenWalnut from "@/assets/photos/kitchen-walnut.webp.asset.json";
-import kitchenWhite from "@/assets/photos/kitchen-white.webp.asset.json";
-import tvWall from "@/assets/photos/tv-wall.webp.asset.json";
-import diningArch from "@/assets/photos/dining-arch.webp.asset.json";
-import kidsNavy from "@/assets/photos/kids-navy.webp.asset.json";
-import kidsMint from "@/assets/photos/kids-mint.webp.asset.json";
-import logo from "@/assets/photos/logo.webp.asset.json";
-
 export type Lang = "en" | "ku" | "ar";
 export const LANGS: { code: Lang; label: string; dir: "ltr" | "rtl" }[] = [
   { code: "en", label: "EN", dir: "ltr" },
@@ -15,16 +5,19 @@ export const LANGS: { code: Lang; label: string; dir: "ltr" | "rtl" }[] = [
   { code: "ar", label: "عربي", dir: "rtl" },
 ];
 
+// Real files live in /public/photos so they load on any host or subdomain.
+// To swap a photo, replace the file (keep the name) or change the path here.
 export const images = {
-  logo: logo.url,
-  kitchenSkylight: kitchenSkylight.url,
-  displayCabinet: displayCabinet.url,
-  kitchenWalnut: kitchenWalnut.url,
-  kitchenWhite: kitchenWhite.url,
-  tvWall: tvWall.url,
-  diningArch: diningArch.url,
-  kidsNavy: kidsNavy.url,
-  kidsMint: kidsMint.url,
+  logo: "/photos/logo.webp",
+  kitchenSkylight: "/photos/kitchen-skylight.webp",
+  displayCabinet: "/photos/display-cabinet.webp",
+  kitchenWalnut: "/photos/kitchen-walnut.webp",
+  kitchenWhite: "/photos/kitchen-white.webp",
+  kitchenFluted: "/photos/kitchen-fluted.webp",
+  tvWall: "/photos/tv-wall.webp",
+  entryway: "/photos/entryway-mirror.webp",
+  kidsNavy: "/photos/kids-navy.webp",
+  kidsMint: "/photos/kids-mint.webp",
 };
 
 export const contact = {
@@ -45,8 +38,9 @@ export const projects: { src: string; cat: ProjectCat; w: number; h: number; key
   { key: "p3", src: images.kidsNavy, cat: "kids", w: 828, h: 821 },
   { key: "p4", src: images.displayCabinet, cat: "storage", w: 828, h: 1028 },
   { key: "p5", src: images.kitchenWalnut, cat: "kitchens", w: 828, h: 1030 },
-  { key: "p6", src: images.diningArch, cat: "living", w: 828, h: 1023 },
+  { key: "p6", src: images.entryway, cat: "storage", w: 1200, h: 1500 },
   { key: "p7", src: images.kidsMint, cat: "kids", w: 828, h: 820 },
+  { key: "p9", src: images.kitchenFluted, cat: "kitchens", w: 1200, h: 1500 },
   { key: "p8", src: images.kitchenWhite, cat: "kitchens", w: 828, h: 1030 },
 ];
 
@@ -54,9 +48,9 @@ export const serviceImages = [
   images.kitchenWalnut,
   images.tvWall,
   images.displayCabinet,
-  images.diningArch,
+  images.entryway,
   images.kidsMint,
-  images.kitchenSkylight,
+  images.kitchenFluted,
 ];
 
 const en = {
@@ -98,9 +92,10 @@ const en = {
       p3: "Navy bunk bed with storage stairs and lit shelves",
       p4: "Black-framed glass display cabinet lit from inside",
       p5: "Kitchen with walnut backsplash and warm under-cabinet light",
-      p6: "Arched doorway opening onto a round dining table",
+      p6: "Fluted entryway cabinet under a round backlit mirror",
       p7: "Mint and white kids' bunk bed with staircase drawers",
       p8: "White kitchen with walnut backsplash and patterned rug",
+      p9: "Corner kitchen with fluted doors, oak worktop and a lit glass display tower",
     } as Record<string, string>,
     close: "Close", prev: "Previous", next: "Next",
   },
@@ -166,7 +161,18 @@ const ku: Dict = {
   projects: {
     label: "کارە هەڵبژێردراوەکان", title: "ماڵە نوێیەکان لە سلێمانی.", hint: "ڕایبکێشە",
     filters: { all: "هەموو", kitchens: "چێشتخانە", living: "دانیشتن", kids: "منداڵان", storage: "هەڵگرتن" },
-    alts: en.projects.alts, close: "داخستن", prev: "پێشوو", next: "دواتر",
+    alts: {
+      p1: "چێشتخانەی سپی لەژێر ڕووناکیبەری سەقف، بە دەستگیرەی زێڕین و ڕووناکی LED",
+      p2: "دیواری تەلەفزیۆنی کرێم بە ڕەفەی گوێزی شەمدار و ڕووناکی نەرم",
+      p3: "قەرەویلەی دوو نهۆمی شین بە پلیکانەی هەڵگرتن و ڕەفەی ڕووناک",
+      p4: "کابینەی نمایشی شووشەیی بە چوارچێوەی ڕەش و ڕووناکی ناوەوە",
+      p5: "چێشتخانە بە پشتی دار و ڕووناکی گەرمی ژێر کابینە",
+      p6: "کابینەی دەرگای ماڵ بە ئاوێنەی خڕی ڕووناک",
+      p7: "قەرەویلەی دوو نهۆمی مینتی و سپی بۆ منداڵان بە پلیکانەی دڕاودار",
+      p8: "چێشتخانەی سپی بە پشتی دار و فەرشی ڕەنگاوڕەنگ",
+      p9: "چێشتخانەی گۆشەیی بە دەرگای ڕیزدار، سەرمیزی دار و تاوەری نمایشی شووشەیی",
+    } as Record<string, string>,
+    close: "داخستن", prev: "پێشوو", next: "دواتر",
   },
   process: {
     label: "چۆن کار دەکەین", title: "چوار هەنگاو، یەک تیم.",
@@ -223,7 +229,18 @@ const ar: Dict = {
   projects: {
     label: "أعمال مختارة", title: "منازل حديثة في السليمانية.", hint: "اسحب",
     filters: { all: "الكل", kitchens: "مطابخ", living: "معيشة", kids: "أطفال", storage: "تخزين" },
-    alts: en.projects.alts, close: "إغلاق", prev: "السابق", next: "التالي",
+    alts: {
+      p1: "مطبخ أبيض تحت سقف زجاجي بمقابض ذهبية وإضاءة LED",
+      p2: "جدار تلفاز كريمي برف من خشب الجوز وإضاءة دافئة",
+      p3: "سرير طابقين أزرق بدرج تخزين ورفوف مضاءة",
+      p4: "خزانة عرض زجاجية بإطار أسود مضاءة من الداخل",
+      p5: "مطبخ بخلفية خشبية وإضاءة دافئة تحت الخزائن",
+      p6: "خزانة مدخل مخددة تحت مرآة دائرية مضاءة",
+      p7: "سرير طابقين للأطفال بلون النعناع والأبيض مع درج بأدراج",
+      p8: "مطبخ أبيض بخلفية خشبية وسجادة مزخرفة",
+      p9: "مطبخ زاوية بأبواب مخددة وسطح من خشب البلوط وبرج عرض زجاجي مضاء",
+    } as Record<string, string>,
+    close: "إغلاق", prev: "السابق", next: "التالي",
   },
   process: {
     label: "طريقة عملنا", title: "أربع خطوات، فريق واحد.",

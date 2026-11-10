@@ -3,29 +3,37 @@ import { useEffect, useState } from "react";
 import { images } from "@/content";
 import { useI18n } from "@/lib/i18n";
 
+/**
+ * First-visit-per-session preloader.
+ * An inline script in <head> (see routes/__root.tsx) sets data-pre="1" on <html> before the
+ * first paint when the visitor has not seen it this session and has not asked for reduced
+ * motion. CSS (styles.css) shows the black overlay only in that case, so there is no flash
+ * of page content before React hydrates. This component then plays the ring animation,
+ * lifts the screen away and removes the flag.
+ */
 export function Preloader() {
   const { t } = useI18n();
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
-    if (sessionStorage.getItem("suli-loaded")) return;
-    sessionStorage.setItem("suli-loaded", "1");
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
-    setShow(true);
+    if (document.documentElement.dataset.pre !== "1") {
+      setShow(false);
+      return;
+    }
+    try {
+      sessionStorage.setItem("suli-loaded", "1");
+    } catch {
+      /* storage blocked: nothing to remember */
+    }
     const id = setTimeout(() => setShow(false), 1400);
     return () => clearTimeout(id);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = show ? "hidden" : "";
-  }, [show]);
-
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={() => document.documentElement.removeAttribute("data-pre")}>
       {show && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink"
+          className="preloader-ssr fixed inset-0 z-[100] items-center justify-center bg-ink"
           exit={{ y: "-100%" }}
           transition={{ duration: 0.7, ease: [0.7, 0, 0.2, 1] }}
           onClick={() => setShow(false)}

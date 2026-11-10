@@ -1,6 +1,10 @@
-# Pixel Perfect Replica
+# Suli Home
 
-Implement exactly the screenshot and nothing else
+Website for Suli Home, interior design and construction in Sulaymaniyah.
+
+## Photos
+
+All photos live in `public/photos/` as compressed `.webp` files and are listed once in `src/content.ts` (`images`, `projects`, `serviceImages`). To swap a photo, replace the file (same name) or change the path there. Text for English, Kurdish and Arabic is in the same file.
 
 This project was built with [Lovable](https://lovable.dev).
 

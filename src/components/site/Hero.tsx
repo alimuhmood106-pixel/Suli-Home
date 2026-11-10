@@ -10,11 +10,11 @@ export function Hero() {
   return (
     <section id="home" className="relative h-[100svh] min-h-[560px] overflow-hidden bg-ink text-cream">
       <img
-        src={images.tvWall}
-        alt="Warm-lit TV wall with walnut shelf by Suli Home"
-        width={828} height={1030}
+        src={images.kitchenFluted}
+        alt="Corner kitchen with fluted doors, oak worktop and warm LED light by Suli Home"
+        width={1200} height={1500}
         fetchPriority="high"
-        className="animate-hero-zoom absolute inset-0 h-full w-full object-cover object-[50%_45%]"
+        className="animate-hero-zoom absolute inset-0 h-full w-full object-cover object-[50%_55%]"
       />
       <div className="bg-hero-overlay absolute inset-0" />
       <div className="pointer-events-none absolute inset-3 border border-copper/60 md:inset-6" />

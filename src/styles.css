@@ -214,6 +214,11 @@ h1, h2, h3, .font-display { font-family: var(--font-head); font-weight: 300; }
 
 @utility no-scrollbar { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
 
+/* Preloader: hidden unless the head script flagged a first visit (data-pre="1" on <html>) */
+.preloader-ssr { display: none; }
+html[data-pre="1"] .preloader-ssr { display: flex; }
+html[data-pre="1"] body { overflow: hidden; }
+
 @keyframes hero-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
 @utility animate-hero-zoom { animation: hero-zoom 14s cubic-bezier(0.2, 0.6, 0.2, 1) both; }
 @keyframes scroll-dot { 0% { transform: translateY(-100%); } 100% { transform: translateY(200%); } }
