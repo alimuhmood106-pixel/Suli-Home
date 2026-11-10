@@ -79,7 +79,7 @@ export function Projects() {
                 className={`snap-start ${i % 3 === 1 ? "h-[62vh] max-h-[640px]" : "h-[52vh] max-h-[540px]"}`}
                 style={{ aspectRatio: `${p.w}/${p.h}` }}
               >
-                <button onClick={() => open(i)} className={`group block h-full w-full overflow-hidden ${i % 4 === 0 ? "arch-sm" : ""}`} draggable={false} aria-label={t.projects.alts[p.key]}>
+                <button onClick={() => open(i)} className="group block h-full w-full overflow-hidden" draggable={false} aria-label={t.projects.alts[p.key]}>
                   <FadeImg src={p.src} alt={t.projects.alts[p.key]} w={p.w} h={p.h} className="pointer-events-none h-full w-full select-none object-cover transition-transform duration-[1.2s] group-hover:scale-[1.04]" />
                 </button>
               </motion.li>
@@ -93,7 +93,7 @@ export function Projects() {
       <ul className="mt-12 columns-2 gap-3 px-4 md:hidden">
         {list.map((p, i) => (
           <li key={p.key} className="mb-3 break-inside-avoid">
-            <button onClick={() => setActive(i)} className={`block w-full overflow-hidden ${i % 3 === 0 ? "arch-sm" : ""}`} style={{ aspectRatio: `${p.w}/${p.h}` }}>
+            <button onClick={() => setActive(i)} className="block w-full overflow-hidden" style={{ aspectRatio: `${p.w}/${p.h}` }}>
               <FadeImg src={p.src} alt={t.projects.alts[p.key]} w={p.w} h={p.h} className="h-full w-full object-cover" />
             </button>
           </li>

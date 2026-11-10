@@ -40,7 +40,7 @@ export function Services() {
               <Reveal delay={0.1}><h2 className="mt-8 text-4xl leading-tight md:text-5xl">{t.services.title}</h2></Reveal>
 
               {/* Desktop picture panel: follows the title you click */}
-              <div className="arch-sm gold-frame relative mt-12 hidden aspect-[4/5] w-full max-w-[19rem] bg-cream/5 md:block" aria-hidden>
+              <div className="relative mt-12 hidden aspect-[4/5] w-full max-w-[19rem] overflow-hidden bg-cream/5 md:block" aria-hidden>
                 {serviceImages.map((src, i) => (
                   <img
                     key={src}
@@ -83,7 +83,7 @@ export function Services() {
                   >
                     <div className="overflow-hidden">
                       <p className="max-w-lg pb-8 ps-14 text-sm leading-relaxed text-sand/70 md:text-base">{s.desc}</p>
-                      <div className="arch-sm mb-8 ms-14 aspect-[4/5] w-44 md:hidden">
+                      <div className="mb-8 ms-14 aspect-[4/5] w-44 overflow-hidden md:hidden">
                         <img src={serviceImages[i]} alt="" width={828} height={1030} loading="lazy" className="h-full w-full object-cover" />
                       </div>
                     </div>
@@ -95,14 +95,14 @@ export function Services() {
         </div>
       </div>
 
-      {/* Desktop hover preview: arch picture beside the cursor */}
+      {/* Desktop hover preview: picture beside the cursor */}
       {fine && (
         <motion.div className="pointer-events-none fixed left-0 top-0 z-40 hidden md:block" style={{ x, y }} aria-hidden>
           <AnimatePresence>
             {hover !== null && (
               <motion.div
                 key={hover}
-                className="arch-sm absolute -top-[150px] left-8 aspect-[4/5] w-60 bg-ink"
+                className="absolute -top-[150px] left-8 aspect-[4/5] w-60 overflow-hidden bg-ink"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}

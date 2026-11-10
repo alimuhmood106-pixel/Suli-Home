@@ -27,7 +27,6 @@ export function Footer() {
         <div className="md:col-span-3">
           <h3 className="text-xs uppercase tracking-[0.3em] text-copper">{t.footer.reach}</h3>
           <a href={contact.phoneHref} dir="ltr" className="font-display mt-5 block text-2xl text-cream">{contact.phoneDisplay}</a>
-          <p className="mt-2 text-sm text-sand/70">{t.footer.hours}</p>
         </div>
       </div>
       <div className="border-t border-sand/10">

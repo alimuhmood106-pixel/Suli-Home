@@ -26,12 +26,8 @@ const jsonLd = {
   image: OG_IMAGE,
   logo: `${SITE_URL}/photos/logo.webp`,
   description: DESC,
-  telephone: "+964 770 645 5520",
-  address: { "@type": "PostalAddress", streetAddress: "GFM6+38F, Qirga – Ibrahim Ahmed", addressLocality: "Sulaymaniyah", addressRegion: "Sulaymaniyah Governorate", addressCountry: "IQ" },
-  openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"], opens: "08:00", closes: "21:30" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "18:00" },
-  ],
+  telephone: "+964 750 117 5923",
+  address: { "@type": "PostalAddress", addressLocality: "Sulaymaniyah", addressCountry: "IQ" },
   sameAs: ["https://www.instagram.com/sulihome1/", "https://www.facebook.com/p/Suli-home-61594256903864/"],
 };
 

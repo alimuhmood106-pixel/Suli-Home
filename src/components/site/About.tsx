@@ -28,11 +28,11 @@ export function About() {
         </div>
 
         <div className="relative md:col-span-6 md:col-start-7">
-          <div className="arch gold-frame glow-bottom relative ms-auto aspect-[4/5] w-[82%] md:w-[78%]">
+          <div className="glow-bottom relative ms-auto aspect-[4/5] w-[82%] overflow-hidden md:w-[78%]">
             <ClipImage src={images.displayCabinet} alt="Lit glass display cabinet with black frame" w={828} h={1028} className="h-full w-full" />
           </div>
           <motion.div style={{ y }} className="absolute -bottom-10 start-0 w-[44%] md:-bottom-16">
-            <div className="arch-sm aspect-[3/4] border-[6px] border-cream">
+            <div className="aspect-[3/4] overflow-hidden border-[6px] border-cream">
               <ClipImage src={images.entryway} alt="Fluted entryway cabinet under a round backlit mirror" w={1200} h={1500} className="h-full w-full" imgClassName="h-full w-full object-cover object-[45%_40%]" />
             </div>
           </motion.div>

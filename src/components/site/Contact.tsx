@@ -1,22 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { contact } from "@/content";
-import { isOpenAt } from "@/lib/hours";
 import { useI18n } from "@/lib/i18n";
-import { ArrowIcon, PhoneIcon, PinIcon, WhatsAppIcon } from "./icons";
+import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "./icons";
 import { Reveal } from "./Reveal";
 
 export function Contact() {
   const { t } = useI18n();
   const c = t.contact;
-  const [open, setOpen] = useState<boolean | null>(null);
-  useEffect(() => {
-    const tick = () => setOpen(isOpenAt(new Date()));
-    tick();
-    const id = setInterval(tick, 60_000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <section id="contact" className="mx-auto max-w-[1600px] px-6 py-28 md:px-16 md:py-40">
       <div className="grid gap-16 lg:grid-cols-12">
@@ -34,45 +25,12 @@ export function Contact() {
                 <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-sweep text-ink"><WhatsAppIcon className="h-4 w-4" /> {c.whatsapp}</a>
                 <a href={contact.phoneHref} className="btn-sweep border-ink/30 text-ink"><PhoneIcon className="h-4 w-4" /> {t.nav.call}</a>
               </div>
-              <div>
-                <dt className="text-xs uppercase tracking-[0.25em] text-muted-foreground">{c.address}</dt>
-                <dd className="mt-2 flex items-start gap-2 leading-relaxed"><PinIcon className="mt-1 h-4 w-4 shrink-0 text-copper" />{c.addressText}</dd>
-              </div>
-              <div>
-                <dt className="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                  {c.hours}
-                  {open !== null && (
-                    <span className={`inline-flex items-center gap-1.5 border px-2 py-0.5 normal-case tracking-normal ${open ? "border-copper text-walnut" : "border-border text-muted-foreground"}`}>
-                      <span className={`h-1.5 w-1.5 rounded-full ${open ? "bg-copper" : "bg-muted-foreground"}`} />
-                      {open ? c.open : c.closed}
-                    </span>
-                  )}
-                </dt>
-                <dd className="mt-3 max-w-sm space-y-2 text-sm">
-                  <div className="flex justify-between gap-4 border-b border-border pb-2"><span>{c.satThu}</span><span className="text-muted-foreground">{c.satThuHours}</span></div>
-                  <div className="flex justify-between gap-4"><span>{c.fri}</span><span className="text-muted-foreground">{c.friHours}</span></div>
-                </dd>
-              </div>
             </dl>
           </Reveal>
         </div>
 
         <div className="space-y-10 lg:col-span-6 lg:col-start-7">
           <Reveal><ContactForm /></Reveal>
-          <Reveal delay={0.1}>
-            <div className="gold-frame relative aspect-[16/10] overflow-hidden bg-muted">
-              <iframe
-                title="Suli Home on Google Maps"
-                src={contact.mapEmbed}
-                className="absolute inset-0 h-full w-full grayscale-[60%] sepia-[20%]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-            <a href={contact.mapLink} target="_blank" rel="noopener noreferrer" className="nav-link mt-4 inline-flex items-center gap-2 text-sm">
-              {c.openMap} <ArrowIcon className="h-3.5 w-3.5" />
-            </a>
-          </Reveal>
         </div>
       </div>
     </section>

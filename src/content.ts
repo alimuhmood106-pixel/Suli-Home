@@ -21,14 +21,11 @@ export const images = {
 };
 
 export const contact = {
-  phoneDisplay: "0770 645 5520",
-  phoneHref: "tel:+9647706455520",
-  whatsapp: "https://wa.me/9647706455520",
+  phoneDisplay: "+964 750 117 5923",
+  phoneHref: "tel:+9647501175923",
+  whatsapp: "https://wa.me/9647501175923",
   instagram: "https://www.instagram.com/sulihome1/",
   facebook: "https://www.facebook.com/p/Suli-home-61594256903864/",
-  plusCode: "GFM6+38F",
-  mapEmbed: "https://maps.google.com/maps?q=GFM6%2B38F%20Sulaymaniyah&z=16&output=embed",
-  mapLink: "https://www.google.com/maps/search/?api=1&query=GFM6%2B38F%20Sulaymaniyah",
 };
 
 export type ProjectCat = "kitchens" | "living" | "kids" | "storage";
@@ -113,12 +110,7 @@ const en = {
   contact: {
     label: "Contact",
     title: "Tell us about your space.",
-    phone: "Phone", whatsapp: "WhatsApp", address: "Address", hours: "Opening hours",
-    addressText: "GFM6+38F, Qirga – Ibrahim Ahmed, Sulaymaniyah",
-    openMap: "Open in Google Maps",
-    satThu: "Saturday – Thursday", satThuHours: "8:00 AM – 9:30 PM",
-    fri: "Friday", friHours: "9:00 AM – 6:00 PM",
-    open: "Open now", closed: "Closed now",
+    phone: "Phone", whatsapp: "WhatsApp",
     form: {
       name: "Your name", phone: "Phone number", type: "Project type", message: "A few words about the project",
       choose: "Choose one", send: "Send message",
@@ -126,7 +118,7 @@ const en = {
       successTitle: "Thank you.", successBody: "We'll call you back within a day. For anything urgent, call or WhatsApp us.", again: "Send another",
     },
   },
-  footer: { tagline: "Every space has a story. We design yours.", links: "Explore", follow: "Follow", reach: "Reach us", hours: "Sat–Thu 8:00–21:30 · Fri 9:00–18:00", rights: "All rights reserved." },
+  footer: { tagline: "Every space has a story. We design yours.", links: "Explore", follow: "Follow", reach: "Reach us", rights: "All rights reserved." },
   skip: "Skip",
 };
 
@@ -186,10 +178,7 @@ const ku: Dict = {
   quote: { line: "وردەکارییەکان ماڵێکی جوانتر دروست دەکەن.", cta: "پرۆژەکەت دەست پێبکە" },
   contact: {
     label: "پەیوەندی", title: "باسی شوێنەکەتمان بۆ بکە.",
-    phone: "تەلەفۆن", whatsapp: "واتسئاپ", address: "ناونیشان", hours: "کاتەکانی کارکردن",
-    addressText: "GFM6+38F، قرگە – ئیبراهیم ئەحمەد، سلێمانی", openMap: "لە گووگڵ ماپ بیکەرەوە",
-    satThu: "شەممە – پێنجشەممە", satThuHours: "٨:٠٠ – ٩:٣٠ ی ئێوارە", fri: "هەینی", friHours: "٩:٠٠ – ٦:٠٠ ی ئێوارە",
-    open: "ئێستا کراوەیە", closed: "ئێستا داخراوە",
+    phone: "تەلەفۆن", whatsapp: "واتسئاپ",
     form: {
       name: "ناوت", phone: "ژمارەی تەلەفۆن", type: "جۆری پرۆژە", message: "چەند وشەیەک دەربارەی پرۆژەکە",
       choose: "یەکێک هەڵبژێرە", send: "ناردن",
@@ -197,7 +186,7 @@ const ku: Dict = {
       successTitle: "سوپاس.", successBody: "لە ماوەی یەک ڕۆژدا پەیوەندیت پێوە دەکەینەوە.", again: "دیسان بنێرە",
     },
   },
-  footer: { tagline: "هەموو شوێنێک چیرۆکێکی هەیە. ئێمە هی تۆ دیزاین دەکەین.", links: "بگەڕێ", follow: "فۆڵۆمان بکە", reach: "پەیوەندی", hours: "شەممە–پێنجشەممە ٨–٩:٣٠ · هەینی ٩–٦", rights: "هەموو مافەکان پارێزراون." },
+  footer: { tagline: "هەموو شوێنێک چیرۆکێکی هەیە. ئێمە هی تۆ دیزاین دەکەین.", links: "بگەڕێ", follow: "فۆڵۆمان بکە", reach: "پەیوەندی", rights: "هەموو مافەکان پارێزراون." },
   skip: "تێپەڕاندن",
 };
 
@@ -254,10 +243,7 @@ const ar: Dict = {
   quote: { line: "التفاصيل تصنع بيتاً أجمل.", cta: "ابدأ مشروعك" },
   contact: {
     label: "تواصل", title: "حدّثنا عن مساحتك.",
-    phone: "الهاتف", whatsapp: "واتساب", address: "العنوان", hours: "ساعات العمل",
-    addressText: "GFM6+38F، قرگه – إبراهيم أحمد، السليمانية", openMap: "افتح في خرائط Google",
-    satThu: "السبت – الخميس", satThuHours: "٨:٠٠ ص – ٩:٣٠ م", fri: "الجمعة", friHours: "٩:٠٠ ص – ٦:٠٠ م",
-    open: "مفتوح الآن", closed: "مغلق الآن",
+    phone: "الهاتف", whatsapp: "واتساب",
     form: {
       name: "الاسم", phone: "رقم الهاتف", type: "نوع المشروع", message: "كلمات قليلة عن المشروع",
       choose: "اختر واحداً", send: "إرسال",
@@ -265,7 +251,7 @@ const ar: Dict = {
       successTitle: "شكراً لك.", successBody: "سنتصل بك خلال يوم. للأمور العاجلة اتصل بنا أو راسلنا على واتساب.", again: "إرسال آخر",
     },
   },
-  footer: { tagline: "لكل مساحة قصة. نحن نصمم قصتك.", links: "تصفح", follow: "تابعنا", reach: "تواصل", hours: "السبت–الخميس ٨–٩:٣٠م · الجمعة ٩–٦م", rights: "جميع الحقوق محفوظة." },
+  footer: { tagline: "لكل مساحة قصة. نحن نصمم قصتك.", links: "تصفح", follow: "تابعنا", reach: "تواصل", rights: "جميع الحقوق محفوظة." },
   skip: "تخطي",
 };
 

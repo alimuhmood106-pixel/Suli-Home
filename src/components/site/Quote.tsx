@@ -15,7 +15,7 @@ export function Quote() {
           </Reveal>
         </div>
         <div className="md:col-span-4 md:col-start-9">
-          <div className="arch gold-frame glow-bottom mx-auto aspect-[4/5] w-3/4 md:w-full">
+          <div className="glow-bottom mx-auto aspect-[4/5] w-3/4 overflow-hidden md:w-full">
             <ClipImage src={images.kitchenWalnut} alt="Kitchen with walnut backsplash and warm LED light" w={828} h={1030} className="h-full w-full" />
           </div>
         </div>
